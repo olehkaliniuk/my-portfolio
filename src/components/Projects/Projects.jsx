@@ -16,9 +16,9 @@ function Projects() {
     <div className='projectscontainer'>
       <h2>My Projects</h2>
       <ul className='sortby'>
-        <li><button className='sbtn' onClick={() => setSortBy(1)}>Sort 1</button></li>
-        <li><button className='sbtn' onClick={() => setSortBy(2)}>Sort 2</button></li>
-        <li><button className='sbtn' onClick={() => setSortBy(3)}>Sort 3</button></li>
+        <li><button className='sbtn' onClick={() => setSortBy(1)}>1</button></li>
+        <li><button className='sbtn' onClick={() => setSortBy(2)}>2</button></li>
+        <li><button className='sbtn' onClick={() => setSortBy(3)}>3</button></li>
         <li><button className='sbtn' onClick={() => setSortBy(null)}>All</button></li>
       </ul>
       <div className='prodj'>
