@@ -55,6 +55,7 @@
 }
 
 
+
 .navl {
     color: white;
     text-decoration: none;
@@ -72,6 +73,8 @@
 
 
 
+
+
 .languagebtn{
     border: none;
     background-color: #0A0A0A;
@@ -85,4 +88,64 @@
     animation: animatedgradient 10s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.menubtn{
+    border: none;
+    background-color: none;
+    display: none;
+}
+.menubtn img{
+    height: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 1000px) {
+    .navcontainer{
+        
+    }
+
+    #box {
+        position: relative; 
+        padding: 20px; 
+        background-color: #0A0A0A; 
+        border-radius: 8px; 
+        overflow: hidden; 
+    }
+
+    .gradient-border ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 15px;
+        margin: 0;
+        padding: 0;
+        z-index: 2; 
+        position: relative; 
+        justify-content: center;
+    }
+
+
+    .menubtn{
+        border: none;
+        background-color: none;
+        display: block;
+    }
+
+    .close{
+        display: none;
+    }
+
+
+
 }
