@@ -1,0 +1,84 @@
+.contactscontainer{
+    margin: 20px;
+    margin-top: 80px;
+
+}
+
+
+.ccontainer{
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-bottom: 100px;
+
+}
+
+.contform form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contform form label{
+    font-size: 20px;
+
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animatedgradient 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.cinput{
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.cinput-btn{
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animatedgradient 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+.ccont{
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.ccont:hover{
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #000 ;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .ccontainer{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    
+    }
+
+}

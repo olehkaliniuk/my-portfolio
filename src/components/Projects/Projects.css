@@ -1,0 +1,82 @@
+.projectscontainer{
+    margin: 20px;
+    margin-top: 80px;
+}
+
+
+.sortby{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.prodj{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding-top: 20px;
+    margin-bottom: 200px;
+}
+
+.pimg{
+    width: 300px;
+    border-radius: 15px;
+
+}
+
+.cell{
+  border: 1px solid #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.sortby li{
+    list-style-type: none;
+}
+
+
+.sbtn{
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(242, 242, 242);
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease infinite;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    background-size: 300% 300%;
+    text-decoration: none;
+}
+
+.sbtn::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 30px;
+    background-color: #0A0A0A;
+    z-index: -1;
+}
+.sbtn:hover{
+    border: 1px solid #fff;
+}
+
+.sbtn:hover::before{
+    display: none;
+}
+
+
+@media (max-width: 1000px) {
+    .prodj{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+}

@@ -1,0 +1,86 @@
+.homecontainer{
+    margin: 20px;
+    margin-top: 80px;
+}
+
+
+
+
+.animtext {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animatedgradient 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.gradient-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(242, 242, 242);
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease infinite;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    background-size: 300% 300%;
+    text-decoration: none;
+}
+
+
+
+.gradient-button::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 30px;
+    background-color: #0A0A0A;
+    z-index: -1;
+}
+.gradient-button:hover{
+    border: 1px solid #fff;
+}
+
+.gradient-button:hover::before{
+    display: none;
+}
+
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.runtext{
+    width: 75%;
+}
