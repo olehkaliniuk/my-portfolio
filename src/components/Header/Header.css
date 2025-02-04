@@ -59,6 +59,7 @@
 .navl {
     color: white;
     text-decoration: none;
+ 
 }
 
 
@@ -80,6 +81,7 @@
     background-color: #0A0A0A;
     font-size: 16px;
     padding: 0;
+  
 }
 
 .languagebtn:hover{
@@ -110,9 +112,7 @@
 
 
 @media (max-width: 1000px) {
-    .navcontainer{
-        
-    }
+  
 
     #box {
         position: relative; 
@@ -144,6 +144,21 @@
 
     .close{
         display: none;
+    }
+
+
+    .navl {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .languagebtn{
+        border: none;
+        background-color: #0A0A0A;
+        font-size: 16px;
+        padding: 0;
+        font-weight: 600;
     }
 
 

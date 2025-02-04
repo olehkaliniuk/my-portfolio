@@ -8,6 +8,7 @@
 
 
 
+
 .firstcont, .skillscontainer {
     opacity: 0;
     transform: translateY(50px);
@@ -30,6 +31,7 @@
 
 .firstcont{
     height: 100vh;
+
 }
 
 

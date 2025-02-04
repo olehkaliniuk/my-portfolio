@@ -39,20 +39,28 @@ function Home() {
     const [skillsContainerVisible, setSkillsContainerVisible] = useState(false);
 
     useEffect(() => {
-        const observerOptions = { threshold: 0.3 }; // 30% элемента должно быть видно
+        const observerOptions = { threshold: 0.5, rootMargin: "0px 0px -10% 0px" };
+
 
         const observerCallback = (entries) => {
             entries.forEach((entry) => {
-                console.log(`Объект: ${entry.target.className}, Видим: ${entry.isIntersecting}`);
-
                 if (entry.target === firstContRef.current) {
-                    setFirstContVisible(entry.isIntersecting);
+                    if (entry.isIntersecting) {
+                        setFirstContVisible(true);
+                    } else {
+                        setFirstContVisible(false); // Теперь скрывается при скролле вверх
+                    }
                 }
                 if (entry.target === skillsContainerRef.current) {
-                    setSkillsContainerVisible(entry.isIntersecting);
+                    if (entry.isIntersecting) {
+                        setSkillsContainerVisible(true);
+                    } else {
+                        setSkillsContainerVisible(false);
+                    }
                 }
             });
         };
+        
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
 
