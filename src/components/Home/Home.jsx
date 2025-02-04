@@ -39,7 +39,7 @@ function Home() {
     const [skillsContainerVisible, setSkillsContainerVisible] = useState(false);
 
     useEffect(() => {
-        const observerOptions = { threshold: 0.5, rootMargin: "0px 0px -10% 0px" };
+        const observerOptions = { threshold: 0.3, rootMargin: "0px 0px -10% 0px" };
 
 
         const observerCallback = (entries) => {
