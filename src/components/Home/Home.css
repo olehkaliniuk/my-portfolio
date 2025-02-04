@@ -5,6 +5,17 @@
 
 }
 
+.firstcont{
+    height: 100vh;
+}
+
+
+.runtext{
+    font-size: 25px;
+
+
+}
+
 
 
 
@@ -88,10 +99,12 @@
     width: 75%;
 }
 
-
 .skillscontainer{
-    margin-top: 200px;
+    height: 100%;
+
+    
 }
+
 
 .skills {
     display: grid;
@@ -148,10 +161,36 @@
 
 .skillsdescription{
     color: #656565;
+    padding: 10px;
+    border-top: 1px solid #656565;
+
 }
 
 .sdesc{
     margin-top: 50px;
     text-align: center;
     font-weight: 400;
+}
+
+
+@media (max-width: 1000px) {
+    .homecontainer{
+        margin: 20px;
+        margin-top: 20px;
+        margin-bottom: 300px;
+    
+    }
+
+    .firstcont h1{
+        font-size: 30px;
+
+    
+    }
+
+    .runtext{
+        font-size: 20px;
+
+    
+    }
+
 }

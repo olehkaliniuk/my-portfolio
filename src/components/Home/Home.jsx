@@ -32,6 +32,7 @@ function Home() {
 
     return (
         <div className='homecontainer'>
+            <div className='firstcont'>
             <h2>{t("h1")}</h2>
             <h1 className='animtext'>{t("h2")}<br />{t("h3")}</h1>
             <h4>
@@ -45,12 +46,13 @@ function Home() {
                     ]}
                     wrapper="span"
                     speed={50}
-                    style={{ fontSize: "25px", display: 'inline-block', }}
+                    style={{ display: 'inline-block', }}
                     repeat={Infinity}
                 />
             </h4>
 
             <NavLink to="/projects" className='gradient-button'>{t("h5")}</NavLink>
+            </div>
 
             <div className='skillscontainer'>
                 <div className='skillsdescription'>

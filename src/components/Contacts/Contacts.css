@@ -13,6 +13,7 @@
 
 }
 
+
 .contform form{
     display: flex;
     flex-direction: column;
@@ -80,5 +81,14 @@
         row-gap: 40px;
     
     }
+
+
+        .contactscontainer{
+            margin: 20px;
+            margin-top: 20px;
+        
+        }
+
+    
 
 }
