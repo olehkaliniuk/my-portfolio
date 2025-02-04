@@ -8,6 +8,22 @@
 
 
 
+.firstcont, .skillscontainer {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(10px); /* Начальное размытие */
+    transition: 
+        opacity 0.6s ease-out, 
+        transform 0.6s ease-out,
+        filter 0.6s ease-out;
+}
+
+.firstcont.visible, .skillscontainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0); /* Убираем размытие при появлении */
+}
+
 
 
 
@@ -65,7 +81,7 @@
     z-index: 1;
     background-size: 300% 300%;
     text-decoration: none;
-    
+    box-sizing: border-box;
 }
 
 
@@ -82,7 +98,7 @@
     z-index: -1;
 }
 .gradient-button:hover{
-    border: 1px solid #fff;
+    outline: 1px solid #fff;
 }
 
 .gradient-button:hover::before{
@@ -134,6 +150,7 @@
     z-index: 1;
     border: none;
     padding: 6px;
+    animation: verticalFlicker 3s infinite ease-in-out;
 }
 
 .skill.selected::before {
@@ -158,6 +175,7 @@
     padding: 30px;
     border-radius: 30px;
     text-align: center;
+    animation: verticalFlicker 3s infinite ease-in-out;
 }
 
 
