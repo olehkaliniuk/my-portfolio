@@ -18,16 +18,18 @@ function Home() {
     const { t , i18n} = useTranslation();
 
 
-    const [description, setDescription] = useState("");
+    
 
     const skills = [
         { name: "CSS", img: css, desc: "Tailwind, SCSS, SASS, Bootstrap" },
         { name: "HTML", img: html, desc: "Semantic HTML, Adaptive Web Design" },
         { name: "JS", img: js, desc: "DOM Manipulation, Asynchronous Programming, Event Handling, API Integration, Version Control/Git, TypeScript" },
-        { name: "NodeJS", img: nodejs, desc: "Expressб Mongoose, Axios, MySQL" },
+        { name: "NodeJS", img: nodejs, desc: "Express, Mongoose, Axios, MySQL" },
         { name: "PHP", img: php, desc: "Laravel, WordPress, MySQL" },
         { name: "React", img: react, desc: "Redux, Axios, React Hooks, React Router" },
     ];
+
+    const [selectedSkill, setSelectedSkill] = useState(skills[3]);
 
 
     return (
@@ -62,9 +64,10 @@ function Home() {
                 {skills.map((skill, index) => (
                     <div 
                         key={index} 
-                        className="skill" 
-                        onMouseEnter={() => setDescription(skill.desc)}
-                        onClick={() => setDescription(skill.desc)}
+                        
+                        className={`skill ${selectedSkill.name === skill.name ? 'selected' : ''}`} 
+                        onMouseEnter={() => setSelectedSkill(skill)}
+                        onClick={() => setSelectedSkill(skill)}
                     >
                         <img src={skill.img} alt={skill.name} />
                         <div>{skill.name}</div>
@@ -81,7 +84,7 @@ function Home() {
 
 
                 </div>
-                <div className='sdesc'>{description}</div>
+                <div className='sdesc'>{selectedSkill.desc}</div>
             </div>
         </div>
     )

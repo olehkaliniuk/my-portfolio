@@ -5,6 +5,13 @@
 
 }
 
+
+
+
+
+
+
+
 .firstcont{
     height: 100vh;
 }
@@ -117,6 +124,31 @@
 
 }
 
+.skill.selected {
+    position: relative;
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 3s ease infinite;
+    background-size: 300% 300%;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    padding: 6px;
+}
+
+.skill.selected::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 30px;
+    background-color: #0A0A0A;
+    z-index: -1;
+}
+
+
 .skill {
     display: flex;
     flex-direction: column;
@@ -169,7 +201,8 @@
 .sdesc{
     margin-top: 50px;
     text-align: center;
-    font-weight: 400;
+    font-weight: bold;
+
 }
 
 
