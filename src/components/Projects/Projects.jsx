@@ -34,19 +34,37 @@ function Projects() {
   useEffect(() => {
     const updateBlurEffect = () => {
       const centerY = window.innerHeight / 2;
+      let closestElement = null;
+      let minDistance = Infinity;
 
       cellsRef.current.forEach((cell) => {
         if (!cell) return;
         const rect = cell.getBoundingClientRect();
         const distanceToCenter = Math.abs(rect.top + rect.height / 2 - centerY);
-        const blurAmount = Math.min(10, distanceToCenter / 50);
-        cell.style.filter = `blur(${blurAmount}px)`;
-        cell.style.opacity = `${1 - blurAmount / 10}`;
+        
+        if (distanceToCenter < minDistance) {
+          minDistance = distanceToCenter;
+          closestElement = cell;
+        }
+      });
+
+      cellsRef.current.forEach((cell) => {
+        if (!cell) return;
+        if (cell === closestElement) {
+          cell.style.filter = "blur(0px)";
+          cell.style.opacity = "1";
+        } else {
+          const rect = cell.getBoundingClientRect();
+          const distanceToCenter = Math.abs(rect.top + rect.height / 2 - centerY);
+          const blurAmount = Math.min(10, distanceToCenter / 50);
+          cell.style.filter = `blur(${blurAmount}px)`;
+          cell.style.opacity = `${1 - blurAmount / 10}`;
+        }
       });
     };
 
     window.addEventListener("scroll", updateBlurEffect);
-    updateBlurEffect(); 
+    updateBlurEffect();
 
     return () => window.removeEventListener("scroll", updateBlurEffect);
   }, [filteredProjects]);
