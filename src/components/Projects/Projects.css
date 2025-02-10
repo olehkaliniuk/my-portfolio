@@ -113,4 +113,10 @@
     
     }
 
+    .cell {
+        display: flex;
+        flex-direction: column;
+      }
+      
+
 }
