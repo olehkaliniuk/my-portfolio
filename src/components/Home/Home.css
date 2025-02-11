@@ -180,6 +180,14 @@
     border-radius: 30px;
     text-align: center;
     animation: verticalFlicker 3s infinite ease-in-out;
+    -webkit-tap-highlight-color: transparent; /* Убирает подсветку при нажатии */
+    touch-action: manipulation; /* Убирает задержку на мобильных */
+}
+
+.skill:active {
+    animation: none; /* Отключаем анимацию при нажатии */
+    transform: scale(0.95); /* Легкое уменьшение вместо мерцания */
+    transition: transform 0.1s ease-out;
 }
 
 
@@ -245,7 +253,6 @@
     .runtext{
         font-size: 20px;
 
-    
     }
 
 }
