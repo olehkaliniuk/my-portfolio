@@ -23,6 +23,7 @@ i18n.use(initReactI18next).init({
         c4: "Message",
         c5: "Send",
         c6: "I am always open to new collaborations and exciting projects. My goal is to create innovative and efficient solutions. I look forward to your feedback and our exchange!",
+        c7: "Message sent"
 
       },
     },
@@ -44,7 +45,8 @@ i18n.use(initReactI18next).init({
         c3: "E-Mail",  
         c4: "Nachricht",  
         c5: "Senden",  
-        c6: "Ich bin immer offen für neue Kooperationen und spannende Projekte. Mein Ziel ist es, innovative und effiziente Lösungen zu schaffen. Ich freue mich auf Ihr Feedback und unseren Austausch!"  
+        c6: "Ich bin immer offen für neue Kooperationen und spannende Projekte. Mein Ziel ist es, innovative und effiziente Lösungen zu schaffen. Ich freue mich auf Ihr Feedback und unseren Austausch!",
+        c7: "Nachricht gesendet"
 
       },
     },

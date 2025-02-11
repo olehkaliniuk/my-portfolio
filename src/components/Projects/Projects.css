@@ -77,6 +77,7 @@
     z-index: 1;
     background-size: 300% 300%;
     text-decoration: none;
+    -webkit-mask-image: -webkit-radial-gradient(white, white); /* Исправление для Safari */
 }
 
 .sbtn::before {
@@ -86,13 +87,14 @@
     left: 2px;
     right: 2px;
     bottom: 2px;
-    border-radius: 30px;
+    border-radius: inherit; /* Исправление для Safari */
     background-color: #0A0A0A;
     z-index: -1;
 }
 .sbtn:hover{
     outline: 1px solid #fff;
     border-radius: 25px;
+
 }
 
 .sbtn:hover::before{

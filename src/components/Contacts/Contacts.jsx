@@ -9,13 +9,14 @@ function Contacts() {
     const form = useRef();
     const contactsRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
+    const [isSent, setIsSent] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
             },
-            { threshold: 0.3 } // Когда 30% блока видимо, срабатывает
+            { threshold: 0.3 }
         );
 
         if (contactsRef.current) {
@@ -39,6 +40,9 @@ function Contacts() {
             .then(
                 () => {
                     console.log('SUCCESS!');
+                    setIsSent(true);
+                    setTimeout(() => setIsSent(false), 3000); // Через 3 сек. возвращаем кнопку в исходное состояние
+                    form.current.reset(); // Очистка формы
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
@@ -48,7 +52,6 @@ function Contacts() {
 
     return (
        <div ref={contactsRef} className={`contactscontainer ${isVisible ? 'visible' : ''}`}>
-
         <h2>{t("c1")}</h2>
 
         <div className='ccontainer'>
@@ -57,10 +60,15 @@ function Contacts() {
                     <label>{t("c2")}</label>
                     <input className='cinput' type="text" name="user_name" required/>
                     <label>{t("c3")}</label>
-                    <input className='cinput'  type="email" name="user_email" required/>
+                    <input className='cinput' type="email" name="user_email" required/>
                     <label>{t("c4")}</label>
-                    <textarea className='cinput'  name="message" required/>
-                    <input className='cinput-btn' type="submit" value={t("c5")} />
+                    <textarea className='cinput' name="message" required/>
+                    <input 
+                        className='cinput-btn' 
+                        type="submit" 
+                        value={isSent ? t("c7") : t("c5")}
+                        disabled={isSent} 
+                    />
                 </form>
             </div>
             <div className='contdesc'> 
