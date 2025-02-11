@@ -111,6 +111,11 @@
 }
 
 
+
+
+
+
+
 @media (max-width: 1000px) {
   
 
@@ -142,9 +147,18 @@
         display: block;
     }
 
-    .close{
+    .close {
         display: none;
     }
+
+    .open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
 
 
     .navl {

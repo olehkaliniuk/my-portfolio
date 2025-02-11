@@ -6,6 +6,10 @@
   z-index: 2;
 }
 
+a{
+  text-decoration: none;
+}
+
 .ft{
   display: flex;
   justify-content: center;

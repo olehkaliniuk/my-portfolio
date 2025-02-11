@@ -93,6 +93,7 @@ function Projects() {
             <div className="descn">
               <div>{pName}</div>
               <div>{pDescription}</div>
+              <button>GitHubLink</button>
             </div>
           </div>
         ))}
