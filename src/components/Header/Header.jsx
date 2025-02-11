@@ -23,7 +23,7 @@ function Header() {
                 
                 <ul>
                     <button className='menubtn' onClick={toggleMenu}> <img src={menu} alt="" /></button>
-                    <li className={isMenuOpen ? "open" : "close"}><NavLink className="navl" onClick={toggleMenu} to="/" >{t("Home")}</NavLink></li>
+                    <li className={isMenuOpen ? "open" : "close"}><NavLink className="navl" onClick={toggleMenu} to="/home" >{t("Home")}</NavLink></li>
                     <li className={isMenuOpen ? "open" : "close"}><NavLink className="navl" onClick={toggleMenu} to="/projects" >{t("Projects")}</NavLink></li>
                     <li className={isMenuOpen ? "open" : "close"}><NavLink className="navl" onClick={toggleMenu} to="/contacts" >{t("Contacts")}</NavLink></li>
                     <li className={isMenuOpen ? "open" : "close"}><button className="languagebtn"  onClick={toggleLanguage}>{t("button")}</button></li>
