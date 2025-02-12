@@ -69,31 +69,37 @@ function Projects() {
     return () => window.removeEventListener("scroll", updateBlurEffect);
   }, [filteredProjects]);
 
+
+
+
+
+
   return (
     <div ref={contactsRef} className={`projectscontainer ${isVisible ? "visible" : ""}`}>
       <h2>My Projects</h2>
       <ul className="sortby">
         <li>
-          <button className="sbtn" onClick={() => setSortBy(1)}>1</button>
+          <button className="sbtn" onClick={() => setSortBy(1)}>Node.js</button>
         </li>
         <li>
-          <button className="sbtn" onClick={() => setSortBy(2)}>2</button>
+          <button className="sbtn" onClick={() => setSortBy(2)}>PHP</button>
         </li>
         <li>
-          <button className="sbtn" onClick={() => setSortBy(3)}>3</button>
+          <button className="sbtn" onClick={() => setSortBy(3)}>React</button>
         </li>
         <li>
           <button className="sbtn" onClick={() => setSortBy(null)}>All</button>
         </li>
       </ul>
       <div className="prodj">
-        {filteredProjects.map(({ id, pName, pDescription, pImg }, index) => (
+        {filteredProjects.map(({ id, pName,pStack, pDescription, pImg, gitLink }, index) => (
           <div className="cell" key={id} ref={(el) => (cellsRef.current[index] = el)}>
-            <img src={pImg} alt="" className="pimg" />
+            <video src={pImg} alt="" className="pimg" autoPlay loop   />
             <div className="descn">
-              <div>{pName}</div>
-              <div>{pDescription}</div>
-              <button>GitHubLink</button>
+              <h3>{pName}</h3>
+              <div className="tec">Technologies Used: {pStack}</div>
+              <div className="tec">{pDescription}</div>
+              <button> <a href={gitLink} target="_blank">GitHubLink</a></button>
             </div>
           </div>
         ))}

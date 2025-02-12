@@ -39,9 +39,7 @@
 }
 
 .pimg{
-    width: 300px;
-    border-radius: 15px;
-
+    max-width: 500px;
 }
 
 .cell {
@@ -50,6 +48,7 @@
     padding: 20px;
     column-gap: 20px;
     transition: filter 0.3s ease, opacity 0.3s ease;
+
   }
   
 
@@ -100,6 +99,23 @@
 .sbtn:hover::before{
     display: none;
 }
+
+.descn{
+ display: flex;
+ flex-direction: column;
+ row-gap: 10px;
+}
+
+.tec{
+    color:  #8c8c8c;;
+}
+
+.descn button{
+   background-color: #0A0A0A;
+   border: 1px solid #fff;
+   padding: 10px;
+   border-radius: 15px;
+   }
 
 
 @media (max-width: 1000px) {
