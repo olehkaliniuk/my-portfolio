@@ -40,6 +40,9 @@
 
 .pimg{
     max-width: 500px;
+    height: 100%;
+    border-radius: 15px;
+    align-self: center;
 }
 
 .cell {
@@ -49,6 +52,17 @@
     column-gap: 20px;
     transition: filter 0.3s ease, opacity 0.3s ease;
 
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
 
@@ -106,6 +120,15 @@
  row-gap: 10px;
 }
 
+
+.tec span{
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    animation: animatedgradient 10s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .tec{
     color:  #8c8c8c;;
 }
@@ -116,6 +139,11 @@
    padding: 10px;
    border-radius: 15px;
    }
+
+
+.btncont{
+    display: flex;
+}
 
 
 @media (max-width: 1000px) {

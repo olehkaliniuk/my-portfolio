@@ -1,8 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Projects.css";
 import { Project } from "../DataProjects/dataProjects";
+import "../../ i18n.js";
+import { useTranslation } from "react-i18next";
 
 function Projects() {
+
+
+  const { t, i18n } = useTranslation();
+
+
   const [sortBy, setSortBy] = useState(null);
   const filteredProjects = sortBy
     ? Project.filter((project) => project.sort === sortBy)
@@ -17,7 +24,7 @@ function Projects() {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
     );
 
     if (contactsRef.current) {
@@ -76,7 +83,9 @@ function Projects() {
 
   return (
     <div ref={contactsRef} className={`projectscontainer ${isVisible ? "visible" : ""}`}>
-      <h2>My Projects</h2>
+      <h2>{t("p1")}</h2>
+      <div className="btncont">
+      <div className="tec">{t("p2")}</div>
       <ul className="sortby">
         <li>
           <button className="sbtn" onClick={() => setSortBy(1)}>Node.js</button>
@@ -91,14 +100,15 @@ function Projects() {
           <button className="sbtn" onClick={() => setSortBy(null)}>All</button>
         </li>
       </ul>
+      </div>
       <div className="prodj">
         {filteredProjects.map(({ id, pName,pStack, pDescription, pImg, gitLink }, index) => (
           <div className="cell" key={id} ref={(el) => (cellsRef.current[index] = el)}>
             <video src={pImg} alt="" className="pimg" autoPlay loop   />
             <div className="descn">
               <h3>{pName}</h3>
-              <div className="tec">Technologies Used: {pStack}</div>
-              <div className="tec">{pDescription}</div>
+              <div className="tec">{t("p3")} <span>{pStack}</span></div>
+              <div className="tec">{t(`${pDescription}`)}</div>
               <button> <a href={gitLink} target="_blank">GitHubLink</a></button>
             </div>
           </div>
