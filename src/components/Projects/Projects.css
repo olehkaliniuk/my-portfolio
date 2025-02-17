@@ -24,9 +24,11 @@
 
 
 .sortby{
-    display: flex;
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки равной ширины */
+  gap: 10px; /* Отступы между элементами */
     justify-content: center;
-    column-gap: 20px;
+
 }
 
 .prodj{
@@ -40,7 +42,7 @@
 
 .pimg{
     max-width: 500px;
-    height: 100%;
+
     border-radius: 15px;
     align-self: center;
 }
@@ -141,6 +143,8 @@
    }
 
 
+
+
 .btncont{
     display: flex;
 }
@@ -163,6 +167,15 @@
         display: flex;
         flex-direction: column;
       }
+
+
+      .sortby{
+        display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 4 колонки равной ширины */
+      gap: 10px; /* Отступы между элементами */
+        justify-content: center;
+    
+    }
       
 
 }
