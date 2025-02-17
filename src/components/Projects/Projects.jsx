@@ -85,7 +85,7 @@ function Projects() {
     <div ref={contactsRef} className={`projectscontainer ${isVisible ? "visible" : ""}`}>
       <h2>{t("p1")}</h2>
       <div className="btncont">
-      <div className="tec">{t("p2")}</div>
+      <div className="tec1">{t("p2")}</div>
       <ul className="sortby">
         <li>
           <button className="sbtn" onClick={() => setSortBy(1)}>Node.js</button>

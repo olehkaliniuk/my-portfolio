@@ -131,6 +131,10 @@
     -webkit-text-fill-color: transparent;
 }
 
+.tec1{
+    color:  #8c8c8c;;
+}
+
 .tec{
     color:  #8c8c8c;;
 }
@@ -175,6 +179,16 @@
       gap: 10px; /* Отступы между элементами */
         justify-content: center;
     
+    }
+
+    .tec1{
+        display: none;
+    }
+
+    .pimg{
+        max-width: 100%;
+        border-radius: 30px;
+        align-self: center;
     }
       
 
