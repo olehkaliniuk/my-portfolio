@@ -73,7 +73,7 @@ function Contacts() {
             </div>
             <div className='contdesc'> 
                 <div>{t("c6")}</div>
-                <div className='ccont'>oleg7778um89@gmail.com</div>
+                <div className='ccont'>kaliniukwork@gmail.com</div>
                 <div className='ccont'>+49 179 221 5230</div>
             </div>
         </div>
