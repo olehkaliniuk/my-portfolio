@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oleh Kaliniuk — Full-Stack Developer</title>
+<!-- Все стили лежат в style.css -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Шапка: логотип, меню, кнопка темы  -->
+<header><div class="wrap">
+<a href="#top" class="tog" style="border:0;padding:0;opacity:1">[ o.k ]</a>
+<nav><a href="#about">über mich</a><a href="#work">projekte</a><a href="#skills">skills</a><a href="#contact">kontakt</a></nav>
+<button class="tog" id="tog" aria-label="Theme wechseln">◐</button>
+</div></header>
+
+<!-- === ОСНОВНОЙ КОНТЕНТ ===  -->
+<main class="wrap" id="top">
+<!-- Главный экран. Имя рисуется из точек — меняй текст в data-text  -->
+<section class="hero">
+<div class="lbl">portfolio / 2026</div>
+<canvas class="dots" data-text="OLEH KALINIUK" data-div="8.4" data-max="150" data-min="38"></canvas>
+<p class="sub">full-stack developer intern @ DreiF, Berlin. .net core · c# · mvc · sql · js<span class="cur"></span></p>
+</section>
+
+<!-- 01 — Über mich  -->
+<section id="about">
+<div class="lbl">01 — über mich</div>
+<canvas class="dots" data-text="ÜBER MICH" data-div="7" data-max="64" data-min="30"></canvas>
+<div style="height:28px"></div>
+<p>Ich bin Oleh, 23, und arbeite als Full-Stack Developer Intern bei DreiF in Berlin.</p>
+<p>Im Backend arbeite ich mit .NET Core, C#, MVC und SQL, im Frontend mit JavaScript, HTML und CSS.</p>
+</section>
+
+<!-- 02 — Projekte (список рисуется из projects.json — правь его, не этот блок) -->
+<section id="work">
+<div class="lbl">02 — projekte</div>
+<canvas class="dots" data-text="PROJEKTE" data-div="6" data-max="64" data-min="30"></canvas>
+<div style="height:28px"></div>
+<div id="projects" aria-live="polite"></div>
+</section>
+
+<!-- 03 — Werdegang: опыт и образование (просто копируй/правь блоки row static) -->
+<section id="path">
+<div class="lbl">03 — werdegang</div>
+<canvas class="dots" data-text="WERDEGANG" data-div="8" data-max="64" data-min="26"></canvas>
+<div style="height:28px"></div>
+<div class="row static"><span><span class="ttl">Full-Stack Developer Intern</span><span class="dim">DreiF · Berlin</span></span><span class="dim">Praktikum</span></div>
+<div class="row static"><span><span class="ttl">GPB Akademie Berlin</span><span class="dim">Berlin</span></span><span class="dim">Bildung</span></div>
+</section>
+
+<!-- 04 — Skills и Sprachen (добавляй или удаляй <span>) -->
+<section id="skills">
+<div class="lbl">04 — skills</div>
+<canvas class="dots" data-text="SKILLS" data-div="6" data-max="64" data-min="30"></canvas>
+<div style="height:28px"></div>
+<div class="skills"><span>.NET Core</span><span>C#</span><span>MVC</span><span>SQL</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+<div class="lbl" style="margin-top:36px">sprachen</div>
+<div class="skills"><span>Deutsch · C1</span><span>Englisch · B2</span><span>Russisch · C2</span><span>Ukrainisch · C2</span></div>
+</section>
+
+<!-- 05 — Kontakt (замени почту и ссылки на соцсети)  -->
+<section id="contact">
+<div class="lbl">05 — kontakt</div>
+<canvas class="dots" data-text="HALLO" data-div="4" data-max="110" data-min="40"></canvas>
+<div style="height:28px"></div>
+<a class="mail" href="mailto:kaliniukwork@gmail.com">kaliniukwork@gmail.com</a>
+<div class="links"><a href="cv/Oleh_Kaliniuk_CV.pdf" download>cv (pdf) ↓</a><a href="tel:+491792215230">+49 1792215230</a><a href="https://github.com/olehkaliniuk" target="_blank" rel="noopener">github</a><a href="https://www.linkedin.com/in/oleh-kaliniuk-7721843b9" target="_blank" rel="noopener">linkedin</a></div>
+</section>
+<!-- Подвал  -->
+<footer>© 2026 oleh kaliniuk · aus punkten gemacht</footer>
+</main>
+
+<!-- Вся логика (точечные буквы, мерцание, смена темы) лежит в script.js -->
+<script src="script.js"></script>
+<!-- Окно с деталями проекта: содержимое подставляет projects.js -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Projektdetails">
+<div class="mbox"><button class="tog mx" id="mx" type="button" aria-label="Schließen">✕</button><div id="mbody"></div></div>
+</div>
+<!-- Логика проектов (список из JSON + окно) лежит в projects.js -->
+<script src="projects.js"></script>
+</body>
+</html>

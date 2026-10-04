@@ -1,0 +1,98 @@
+/* === ЦВЕТА ===
+   Тёмная тема по умолчанию: --bg фон, --fg текст и точки, --dim приглушённый текст, --line пунктир.
+   env(safe-area...) — отступы, чтобы на телефоне контент не уезжал под вырез и системные панели  */
+:root{--bg:#000;--fg:#fff;--dim:rgba(255,255,255,.55);--line:rgba(255,255,255,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Светлая тема (кнопка ◐): просто меняем цвета местами  */
+:root[data-theme="light"]{--bg:#fff;--fg:#000;--dim:rgba(0,0,0,.55);--line:rgba(0,0,0,.18)}
+/* === БАЗА ===
+   Плавный скролл по якорям, моноширинный шрифт, без горизонтальной прокрутки  */
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:hidden;transition:background .4s,color .4s}
+a{color:inherit;text-decoration:none}
+/* Центрирующий контейнер контента (макс. 1000px)  */
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+/* === ШАПКА === липкая, всегда сверху  */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px dashed var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+/* Меню и кнопка темы: мелкие буквы с разрядкой  */
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a,.tog{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;transition:opacity .2s}
+nav a:hover,.tog:hover{opacity:1;animation:flick .5s steps(1) 1}
+.tog{background:none;border:1px dashed var(--line);color:var(--fg);font-family:inherit;padding:4px 10px;cursor:pointer}
+/* === СЕКЦИИ === отступы между блоками  */
+section{padding:90px 0 40px;min-height:30vh}
+.hero{padding-top:70px}
+/* Маленькая подпись над заголовком ("01 — über mich")  */
+.lbl{font-size:12px;letter-spacing:.2em;color:var(--dim);margin-bottom:18px;text-transform:uppercase}
+/* Холст, на котором script.js рисует текст из точек  */
+canvas.dots{display:block;width:100%}
+/* Подзаголовок под именем и мигающий курсор  */
+.sub{margin-top:28px;max-width:560px;color:var(--dim)}
+.cur{display:inline-block;width:.6em;height:1.1em;background:var(--fg);vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+/* Обычные абзацы  */
+p{max-width:620px;margin:0 0 16px}
+/* === ПРОЕКТЫ === при наведении строка инвертируется (белая заливка)  */
+.row{width:100%;text-align:left;background:none;border:0;color:inherit;font:inherit;cursor:pointer;display:grid;grid-template-columns:60px 1fr auto;gap:16px;align-items:baseline;padding:20px 12px;border-top:1px dashed var(--line);transition:background .2s,color .2s}
+.row:last-child{border-bottom:1px dashed var(--line)}
+.row:hover{background:var(--fg);color:var(--bg)}
+.row:hover .dim{color:var(--bg);opacity:.6}
+.row .ttl{display:block;margin:0;font-size:20px;font-weight:600;letter-spacing:.04em}
+.row:hover .ttl{animation:flick .45s steps(1) 1}
+.dim{color:var(--dim)}
+/* === НАВЫКИ === плашки с редким мерцанием, у каждой своя задержка  */
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{border:1px dashed var(--line);padding:6px 14px;font-size:13px;animation:flick 6s steps(1) infinite}
+.skills span:nth-child(3n){animation-delay:-1.3s}.skills span:nth-child(3n+1){animation-delay:-3.1s}.skills span:nth-child(5n){animation-delay:-4.6s}
+/* === КОНТАКТ ===  */
+.mail{font-size:clamp(18px,4vw,30px);border-bottom:1px dashed var(--fg);display:inline-block;padding-bottom:4px}
+.mail:hover{animation:flick .6s steps(1) 1}
+.links{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
+/* Подвал  */
+footer{padding:60px 0 40px;color:var(--dim);font-size:12px;letter-spacing:.1em}
+/* === АНИМАЦИИ ===
+   blink — мигание курсора, flick — «глюк»-мерцание (резко гаснет и включается)  */
+@keyframes blink{50%{opacity:0}}
+@keyframes flick{0%,100%{opacity:1}8%{opacity:.15}14%{opacity:1}22%{opacity:.4}30%{opacity:1}74%{opacity:1}76%{opacity:.2}78%{opacity:1}}
+/* === АДАПТИВ для телефона ===  */
+@media(max-width:600px){.row{grid-template-columns:36px 1fr}.row .dim:last-child{grid-column:2}}
+/* Если в системе отключены анимации — выключаем мерцание  */
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+/* === ОКНО ПРОЕКТА === затемнение на весь экран + рамка с деталями */
+.modal{position:fixed;inset:0;z-index:20;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 24px) 16px calc(env(safe-area-inset-bottom,0px) + 24px);background:rgba(0,0,0,.85);background:color-mix(in srgb,var(--bg) 90%,transparent)}
+.modal[hidden]{display:none}
+.mbox{position:relative;width:100%;max-width:760px;background:var(--bg);border:1px dashed var(--fg);padding:32px 28px;animation:flick .5s steps(1) 1}
+.mx{position:absolute;top:10px;right:10px}
+.mt{margin:0 0 20px;font-size:clamp(24px,6vw,40px);letter-spacing:.04em;padding-right:40px}
+.hl{list-style:none;padding:0;margin:20px 0}
+.hl li:before{content:"· "}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:24px 0}
+/* Фото всегда чёрно-белые; .ph — точечная заглушка, если файла нет */
+.gal img,.ph{width:100%;aspect-ratio:16/10;object-fit:cover;border:1px dashed var(--line)}
+.gal img{filter:grayscale(1) contrast(1.1)}
+.ph{display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px;letter-spacing:.2em;background:radial-gradient(var(--line) 1px,transparent 1px) 0 0/10px 10px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btns a{border:1px dashed var(--fg);padding:8px 16px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.btns a:hover{background:var(--fg);color:var(--bg)}
+.links a{border-bottom:1px dashed var(--line)}
+.links a:hover{animation:flick .5s steps(1) 1}
+.mail{overflow-wrap:anywhere}
+
+/* === ТЕЛЕФОН: шапка в одну строку, все слова меню влезают === */
+@media(max-width:600px){
+  .wrap{padding:0 16px}
+  header .wrap{height:auto;min-height:52px;gap:8px;flex-wrap:nowrap}
+  nav{gap:12px;flex-wrap:nowrap}
+  nav a,.tog{font-size:11px;letter-spacing:.04em;white-space:nowrap}
+  .tog{padding:3px 8px}
+  .mbox{padding:28px 18px}
+}
+/* На самых узких экранах прячем логотип слева, чтобы меню не переносилось */
+@media(max-width:420px){header .wrap>a.tog{display:none}header .wrap{justify-content:space-between}}
+
+/* Строки без клика (Werdegang): без инверсии при наведении, две колонки */
+.row.static{cursor:default;grid-template-columns:1fr auto}
+.row.static:hover{background:none;color:inherit}
+.row.static:hover .dim{color:var(--dim);opacity:1}
+.row.static:hover .ttl{animation:none}
