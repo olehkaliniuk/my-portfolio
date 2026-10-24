@@ -2,72 +2,43 @@
   "_hilfe": "Hier trägst du deine Projekte ein. Jedes Projekt = ein Block { ... } in der Liste 'projects'. Reihenfolge = Reihenfolge auf der Seite. Felder, die du nicht brauchst, einfach leer lassen (\"\" oder []). Bilder kommen in den Ordner img/ (siehe README.md). Achtung: nach dem letzten Block KEIN Komma.",
   "projects": [
     {
-      "id": "taskflow",
-      "title": "TASKFLOW",
+      "id": "eakte",
+      "title": "EAKTE",
       "year": 2026,
-      "category": "Aufgabenverwaltung",
+      "category": "Aktenverwaltung",
       "role": "Full-Stack Developer",
-      "summary": "Web-App zur Aufgabenverwaltung für kleine Teams",
-      "description": "TaskFlow ist eine Web-Anwendung, mit der kleine Teams Aufgaben anlegen, zuweisen und nach Status verfolgen können. Das Backend basiert auf ASP.NET Core MVC mit einer SQL-Datenbank, das Frontend ist bewusst schlicht gehalten.",
+      "summary": "Mandantenfähige elektronische Aktenverwaltung, von Grund auf gebaut",
+      "description": "eAkte ist mein zweites großes Projekt bei DreiF in Berlin und ein vollständiges System zur elektronischen Aktenverwaltung, das ich von Grund auf entwickelt habe. Im Mittelpunkt stehen Akten und Vorgänge: Sie werden in Kategorien und Gruppen angelegt und in einer beliebig tiefen Ordnerstruktur organisiert. Mehrere Mandanten arbeiten in derselben Installation, ihre Daten sind strikt getrennt. Ergänzt wird das durch Kontakte, eine Änderungshistorie, Import und Export von Dokumenten und einen eingebauten PDF-Konverter. Word-Dokumente lassen sich per WebDAV direkt aus dem Browser bearbeiten und werden beim Speichern automatisch zurückgeschrieben. Check-out und Check-in verhindern, dass zwei Personen gleichzeitig am selben Dokument arbeiten. Ein flexibles Rollensystem steuert Rechte pro Funktion und pro Objekt und wird immer auf dem Server geprüft. Screenshots, eine ausführliche Beschreibung und den Code findest du auf GitHub.",
       "highlights": [
-        "Benutzerverwaltung mit Login und Rollen",
-        "Aufgaben mit Status, Priorität und Deadline",
-        "Filter und Suche ohne Seiten-Reload (JavaScript)"
+        "Akten und Vorgänge mit tiefer Ordnerstruktur",
+        "Mandantenfähig mit strikt getrennten Daten",
+        "Kontakte und Änderungshistorie",
+        "Rollen und Rechte pro Funktion und pro Objekt",
+        "Word-Dokumente im Browser bearbeiten (WebDAV), mit Check-out und Check-in",
+        "Import, Export und eingebauter PDF-Konverter"
       ],
-      "tech": [".NET Core", "C#", "MVC", "SQL", "JavaScript", "CSS"],
-      "images": ["img/taskflow-1.jpg", "img/taskflow-2.jpg"],
-      "links": { "live": "", "github": "https://github.com/olehkaliniuk" }
-    },
-    {
-      "id": "shoplite",
-      "title": "SHOPLITE",
-      "year": 2025,
-      "category": "Mini-Webshop",
-      "role": "Full-Stack Developer",
-      "summary": "Kleiner Webshop mit Warenkorb und Bestellverwaltung",
-      "description": "ShopLite ist ein Übungsprojekt für einen Mini-Webshop: Produktkatalog, Warenkorb und Bestellungen. Der Fokus lag auf sauberer Datenbankstruktur und einer klaren MVC-Architektur.",
-      "highlights": [
-        "Produktkatalog mit Kategorien",
-        "Warenkorb und Bestellprozess",
-        "Admin-Bereich zur Produktpflege"
-      ],
-      "tech": ["C#", "ASP.NET Core MVC", "Entity Framework", "SQL Server", "HTML", "CSS"],
-      "images": ["img/shoplite-1.jpg"],
-      "links": { "live": "", "github": "" }
-    },
-    {
-      "id": "transit-board",
-      "title": "TRANSIT BOARD",
-      "year": 2025,
-      "category": "Dashboard",
-      "role": "Frontend Developer",
-      "summary": "Live-Abfahrtstafel für den Berliner Nahverkehr",
-      "description": "Ein Dashboard, das Abfahrten an einer Haltestelle live anzeigt. Die Daten werden per JavaScript von einer öffentlichen API geladen und alle 30 Sekunden aktualisiert.",
-      "highlights": [
-        "Live-Daten über fetch() und eine öffentliche API",
-        "Responsive für Handy und Desktop",
-        "Dunkles und helles Design"
-      ],
-      "tech": ["JavaScript", "HTML", "CSS", "REST API"],
-      "images": ["img/transit-1.jpg", "img/transit-2.jpg"],
-      "links": { "live": "", "github": "" }
-    },
-    {
-      "id": "dot-portfolio",
-      "title": "DOT PORTFOLIO",
-      "year": 2026,
-      "category": "Portfolio-Website",
-      "role": "Design & Entwicklung",
-      "summary": "Diese Seite: Text aus Punkten, nur HTML, CSS und JS",
-      "description": "Mein eigenes Portfolio. Alle Überschriften werden im Browser aus Punkten gezeichnet (Canvas) und flackern leicht. Komplett ohne Frameworks und Bibliotheken.",
-      "highlights": [
-        "Punkt-Schrift per Canvas, funktioniert mit jeder Sprache",
-        "Schwarz-Weiß-Design mit Umschalter",
-        "Projekte werden aus einer JSON-Datei geladen"
-      ],
-      "tech": ["HTML", "CSS", "JavaScript", "Canvas"],
+      "tech": ["ASP.NET Core", "C#", "SQL Server", "WebDAV", "JavaScript", "HTML", "CSS"],
       "images": [],
-      "links": { "live": "", "github": "https://github.com/olehkaliniuk" }
+      "links": { "live": "", "github": "https://github.com/olehkaliniuk/eAkte" }
+    },
+    {
+      "id": "adminpanel",
+      "title": "ADMINPANEL",
+      "year": 2026,
+      "category": "Administrationsoberfläche",
+      "role": "Full-Stack Developer",
+      "summary": "Mandantenfähiges Admin-Panel mit Rollen und geschützten Bereichen",
+      "description": "Das AdminPanel ist mein erstes großes Projekt bei DreiF in Berlin: eine Verwaltungsoberfläche, in der mehrere Unternehmen mit derselben Anwendung arbeiten und jeweils nur ihre eigenen Daten sehen. Ein Mandanten-Provider bestimmt den aktiven Mandanten und begrenzt jede Abfrage darauf. Sensible Bereiche wie Konfiguration, Konfigurations-Protokoll und Logs sind nur für berechtigte Rollen zugänglich, die Prüfung läuft auf dem Server. Jede Änderung an der Konfiguration wird mit altem und neuem Wert, Benutzer, Zeitpunkt und Mandant protokolliert. Alle Tabellen haben eigene Sortierung, Filter pro Spalte und Seitenaufteilung. Dazu kommen Module für Abteilungen und Referate, Personen, Adressen, Vorlagen und Rollen sowie ein helles und ein dunkles Design. Screenshots, eine ausführliche Beschreibung und den Code findest du auf GitHub.",
+      "highlights": [
+        "Mandantensystem mit Mandanten-Provider",
+        "Rollenbasierter Zugriff auf sensible Tabellen",
+        "Änderungsprotokoll für Konfigurationen",
+        "Eigene Sortierung und Filterung in allen Tabellen",
+        "Module für Abteilungen, Personen, Adressen, Vorlagen und Rollen"
+      ],
+      "tech": ["ASP.NET Core", "Razor Pages", "C#", "SQL Server", "JavaScript", "HTML", "CSS"],
+      "images": [],
+      "links": { "live": "", "github": "https://github.com/olehkaliniuk/AdminPanel" }
     }
   ]
 }
